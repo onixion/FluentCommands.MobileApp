@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:testmobileapp="clr-namespace:FluentCommands.TestMobileApp"
+             x:Class="FluentCommands.TestMobileApp.TestPage">
+    <ContentPage.Content>
+        <Grid Padding="10"
+              ColumnSpacing="10"
+              RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!-- A -->
+            <ContentView Grid.Row="0"
+                         Grid.Column="0">
+                <testmobileapp:TestButton Text="A"
+                                          Command="{Binding CommandA}" />
+            </ContentView>
+            <!-- B -->
+            <ContentView Grid.Row="0"
+                         Grid.Column="1">
+                <testmobileapp:TestButton Text="B"
+                                          Command="{Binding CommandB}" />
+            </ContentView>
+            <!-- C -->
+            <ContentView Grid.Row="0"
+                         Grid.Column="2">
+                <testmobileapp:TestButton Text="C"
+                                          Command="{Binding CommandC}" />
+            </ContentView>
+            <!-- D -->
+            <ContentView Grid.Row="1"
+                         Grid.Column="0">
+                <testmobileapp:TestButton Text="D"
+                                          Command="{Binding CommandD}" />
+            </ContentView>
+            <!-- E -->
+            <ContentView Grid.Row="1"
+                         Grid.Column="1">
+                <testmobileapp:TestButton Text="E"
+                                          Command="{Binding CommandE}" />
+            </ContentView>
+            <!-- F -->
+            <ContentView Grid.Row="1"
+                         Grid.Column="2">
+                <testmobileapp:TestButton Text="F"
+                                          Command="{Binding CommandF}" />
+            </ContentView>
+
+            <testmobileapp:TestLabel Grid.Row="3"
+                                     Grid.Column="0"
+                                     Grid.ColumnSpan="3"
+                                     Text="{Binding Text}"
+                                     FontSize="40" 
+                                     HorizontalTextAlignment="Center"
+                                     HorizontalOptions="Center"
+                                     VerticalTextAlignment="Center"
+                                     VerticalOptions="Center"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
