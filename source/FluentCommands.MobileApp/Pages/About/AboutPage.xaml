@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:AbstractContentPage  xmlns:pages="clr-namespace:FluentCommands.MobileApp.Pages"
+                            xmlns="http://xamarin.com/schemas/2014/forms"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                            xmlns:cards="clr-namespace:FluentCommands.MobileApp.Controls.Cards"
+                            xmlns:texts="clr-namespace:FluentCommands.MobileApp.Controls.Texts"
+                            xmlns:buttons="clr-namespace:FluentCommands.MobileApp.Controls.Buttons"
+                            x:Class="FluentCommands.MobileApp.Pages.About.AboutPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <cards:BackgroundCard>
+                <StackLayout Padding="25"
+                             Spacing="15">
+
+
+                    <cards:Card>
+                        <StackLayout Padding="15"
+                                     Spacing="5">
+                            <texts:LogoText Text="Fluent Commands"
+                                            VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Center" />
+                            <texts:Headline Text="What is FluentCommands?" />
+                            <texts:Paragraph Text="" />
+                        </StackLayout>
+                    </cards:Card>
+
+                    <cards:Card>
+                        <StackLayout Padding="15"
+                                     Spacing="5">
+                            <texts:Headline Text="Example" />
+                            <texts:Paragraph Text="Here you can see some buttons. And play with it." />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <buttons:IndicatorButton Grid.Column="0"
+                                                         Command="{Binding E1C0Command}"
+                                                         Text="{Binding E1C0Text}" />
+                                <buttons:IndicatorButton Grid.Column="1"
+                                                         Command="{Binding E1C1Command}"
+                                                         Text="{Binding E1C1Text}" />
+                                <buttons:IndicatorButton Grid.Column="2"
+                                                         Command="{Binding E1C2Command}"
+                                                         Text="{Binding E1C2Text}" />
+                                <buttons:IndicatorButton Grid.Column="3"
+                                                         Command="{Binding E1C3Command}"
+                                                         Text="{Binding E1C3Text}" />
+                            </Grid>
+                        </StackLayout>
+                    </cards:Card>
+
+
+                </StackLayout>
+            </cards:BackgroundCard>
+        </ScrollView>
+    </ContentPage.Content>
+</pages:AbstractContentPage>

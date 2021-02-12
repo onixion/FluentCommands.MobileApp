@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FluentCommands.MobileApp.App">
+    <Application.Resources>
+
+        <!-- Halaney Demo -->
+        <OnPlatform x:TypeArguments="x:String"
+                    x:Key="Halaney-Demo">
+            <On Platform="iOS"
+                Value="Halaney-Demo.otf" />
+            <On Platform="Android"
+                Value="Halaney-Demo.otf#Halaney-Demo" />
+        </OnPlatform>
+
+        <!-- Ubuntu Regular -->
+        <OnPlatform x:TypeArguments="x:String"
+                    x:Key="Ubuntu-Regular">
+            <On Platform="iOS"
+                Value="Ubuntu-Regular.ttf" />
+            <On Platform="Android"
+                Value="Ubuntu-Regular.ttf#Ubuntu-Regular" />
+        </OnPlatform>
+
+        <!-- Ubuntu Bold -->
+        <OnPlatform x:TypeArguments="x:String"
+                    x:Key="Ubuntu-Bold">
+            <On Platform="iOS"
+                Value="Ubuntu-Bold.ttf" />
+            <On Platform="Android"
+                Value="Ubuntu-Bold.ttf#Ubuntu-Bold" />
+        </OnPlatform>
+
+        <!-- Ubuntu Light -->
+        <OnPlatform x:TypeArguments="x:String"
+                    x:Key="Ubuntu-Light">
+            <On Platform="iOS"
+                Value="Ubuntu-Light.ttf" />
+            <On Platform="Android"
+                Value="Ubuntu-Light.ttf#Ubuntu-Light" />
+        </OnPlatform>
+        
+    </Application.Resources>
+</Application>
