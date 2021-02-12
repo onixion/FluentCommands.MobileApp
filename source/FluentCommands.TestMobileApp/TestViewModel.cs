@@ -51,41 +51,57 @@ namespace FluentCommands.TestMobileApp
         private string text;
 
         /// <summary>
+        /// Text.
+        /// </summary>
+        public bool CanExecuteForF
+        {
+            get => canExecuteForF;
+            set
+            {
+                SetProperty(ref canExecuteForF, value);
+                fCommand.SetCanExecute(value);
+            }
+        }
+        private bool canExecuteForF;
+
+        TestCommand fCommand;
+
+        /// <summary>
         /// Constructor.
         /// </summary>
         public TestViewModel()
         {
+            fCommand = new TestCommand(this);
+
             FluentCommandManager
                 .New()
                 .LockAll(eg =>
                 {
-                    CommandA = eg.RegisterCommand(FluentAsyncCommand
+                    CommandA = eg.Register(FluentCommand
                         .New()
                         .OnExecuteAsync(OnAsyncCommandA));
 
-                    CommandB = eg.RegisterCommand(FluentAsyncCommand
-                        .New()
-                        .OnExecuteAsync(OnAsyncCommandB));
-                })
-                .LockOthers(eg =>
-                {
-                    CommandC = eg.RegisterCommand(FluentAsyncCommand
-                        .New()
-                        .OnExecuteAsync(OnAsyncCommandC));
-
-                    CommandD = eg.RegisterCommand(FluentAsyncCommand
+                    CommandD = eg.Register(FluentCommand
                         .New()
                         .OnExecuteAsync(OnAsyncCommandD));
                 })
-                .LockThis(eg =>
+                .LockOthers(eg =>
                 {
-                    CommandE = eg.RegisterCommand(FluentAsyncCommand
+                    CommandB = eg.Register(FluentCommand
+                        .New()
+                        .OnExecuteAsync(OnAsyncCommandB));
+
+                    CommandE = eg.Register(FluentCommand
                         .New()
                         .OnExecuteAsync(OnAsyncCommandE));
-
-                    CommandF = eg.RegisterCommand(FluentAsyncCommand
+                })
+                .LockThis(eg =>
+                {
+                    CommandC = eg.Register(FluentCommand
                         .New()
-                        .OnExecuteAsync(OnAsyncCommandF));
+                        .OnExecuteAsync(OnAsyncCommandC));
+
+                    CommandF = eg.Register(fCommand);
                 });
         }
 
@@ -94,54 +110,45 @@ namespace FluentCommands.TestMobileApp
         int counterC = 0;
         int counterD = 0;
         int counterE = 0;
-        int counterF = 0;
 
         async Task OnAsyncCommandA(object parameter)
         {
-            Text = $"A {counterA}";
+            Text = $"A {counterA} (1s) [LockAll]";
             counterA++;
 
-            await Task.Delay(5000);
+            await Task.Delay(1000);
         }
 
         async Task OnAsyncCommandB(object parameter)
         {
-            Text = $"B {counterB}";
+            Text = $"B {counterB} (2s) [LockOthers]";
             counterB++;
 
-            await Task.Delay(1500);
+            await Task.Delay(2000);
         }
 
         async Task OnAsyncCommandC(object parameter)
         {
-            Text = $"C {counterC}";
+            Text = $"C {counterC} (3s) [LockThis]";
             counterC++;
 
-            await Task.Delay(1500);
+            await Task.Delay(3000);
         }
 
         async Task OnAsyncCommandD(object parameter)
         {
-            Text = $"D {counterD}";
+            Text = $"D {counterD} (2s) [LockAll]";
             counterD++;
 
-            await Task.Delay(1500);
+            await Task.Delay(2000);
         }
 
         async Task OnAsyncCommandE(object parameter)
         {
-            Text = $"E {counterE}";
+            Text = $"E {counterE} (5s) [LockOthers]";
             counterE++;
 
-            await Task.Delay(10000);
-        }
-
-        async Task OnAsyncCommandF(object parameter)
-        {
-            Text = $"F {counterF}";
-            counterF++;
-
-            await Task.Delay(1500);
+            await Task.Delay(5000);
         }
 
         #region INotifyPropertyChanged

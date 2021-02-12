@@ -31,6 +31,8 @@ namespace FluentCommands.TestMobileApp
                 {
                     Command.CanExecuteChanged -= OnCanExecutedChanged;
                     Command.CanExecuteChanged += OnCanExecutedChanged;
+
+                    OnCanExecutedChanged(null, null);
                 }
             }
         }

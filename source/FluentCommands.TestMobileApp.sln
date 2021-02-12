@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentCommands.TestMobileAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentCommands.TestMobileApp.iOS", "FluentCommands.TestMobileApp.iOS\FluentCommands.TestMobileApp.iOS.csproj", "{A6BB5A09-DE58-4FAD-AD01-0D90DDE52234}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentCommands.TestMobileApp", "FluentCommands.TestMobileApp\FluentCommands.TestMobileApp.csproj", "{B3F04238-80C8-486F-961D-399A64003908}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentCommands.TestMobileApp", "FluentCommands.TestMobileApp\FluentCommands.TestMobileApp.csproj", "{B3F04238-80C8-486F-961D-399A64003908}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
