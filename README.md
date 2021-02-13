@@ -1,2 +1,2 @@
-# FluentCommands.TestMobileApp
-Test Mobile App for FluentCommands .
+# FluentCommands.MobileApp
+Mobile app for showing the FluentCommands library.
