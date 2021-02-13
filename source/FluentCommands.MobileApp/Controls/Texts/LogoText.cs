@@ -12,8 +12,7 @@ namespace FluentCommands.MobileApp.Controls.Texts
         /// </summary>
         public LogoText()
         {
-            FontFamily = (OnPlatform<string>)Application.Current.Resources["Halaney-Demo"];
-            FontSize = 20;
+            FontFamily = (OnPlatform<string>)Application.Current.Resources["Lobster"];
             TextColor = Color.Black;
         }
     }

@@ -6,8 +6,11 @@
     <ContentView.Content>
         <Grid Padding="0">
             <Frame x:Name="Frame"
+                   Grid.Column="0"
                    CornerRadius="25" />
-            <buttons:TestButton x:Name="Button" TextColor="Black" />
+            <buttons:TransparentButton x:Name="Button"
+                                       Grid.Column="0"
+                                       TextColor="White" />
         </Grid>
     </ContentView.Content>
 </ContentView>

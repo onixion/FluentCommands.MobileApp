@@ -1,34 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:AbstractContentPage  xmlns:pages="clr-namespace:FluentCommands.MobileApp.Pages"
-                            xmlns="http://xamarin.com/schemas/2014/forms"
-                            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                            xmlns:cards="clr-namespace:FluentCommands.MobileApp.Controls.Cards"
-                            xmlns:texts="clr-namespace:FluentCommands.MobileApp.Controls.Texts"
-                            xmlns:buttons="clr-namespace:FluentCommands.MobileApp.Controls.Buttons"
-                            x:Class="FluentCommands.MobileApp.Pages.About.AboutPage">
+<pages:AbstractContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                           xmlns:buttons="clr-namespace:FluentCommands.MobileApp.Controls.Buttons"
+                           xmlns:cards="clr-namespace:FluentCommands.MobileApp.Controls.Cards"
+                           xmlns:separators="clr-namespace:FluentCommands.MobileApp.Controls.Separators"
+                           xmlns:texts="clr-namespace:FluentCommands.MobileApp.Controls.Texts"
+                           xmlns:layouts="clr-namespace:FluentCommands.MobileApp.Layouts"
+                           xmlns:pages="clr-namespace:FluentCommands.MobileApp.Pages"
+                           xmlns:resources="clr-namespace:FluentCommands.MobileApp.Resources"
+                           x:Class="FluentCommands.MobileApp.Pages.About.AboutPage">
     <ContentPage.Content>
-        <ScrollView>
+        <layouts:ScrollContent>
             <cards:BackgroundCard>
                 <StackLayout Padding="25"
                              Spacing="15">
 
-
+                    <!-- Logo -->
                     <cards:Card>
                         <StackLayout Padding="15"
-                                     Spacing="5">
+                                     Spacing="15">
                             <texts:LogoText Text="Fluent Commands"
                                             VerticalTextAlignment="Center"
-                                            HorizontalTextAlignment="Center" />
-                            <texts:Headline Text="What is FluentCommands?" />
-                            <texts:Paragraph Text="" />
+                                            HorizontalTextAlignment="Center"
+                                            FontSize="25" />
+                            <!--<separators:LineSeparator />
+                            <texts:Paragraph Text="C# library implementing a fluent command pattern." />-->
                         </StackLayout>
                     </cards:Card>
 
+                    <!-- Info -->
                     <cards:Card>
                         <StackLayout Padding="15"
-                                     Spacing="5">
-                            <texts:Headline Text="Example" />
-                            <texts:Paragraph Text="Here you can see some buttons. And play with it." />
+                                     Spacing="15">
+                            <texts:Headline Text="{x:Static resources:Texts.InfoHeadline}"
+                                            HorizontalTextAlignment="Center" />
+                            <texts:Paragraph Text="{x:Static resources:Texts.InfoDescription}" />
+                        </StackLayout>
+                    </cards:Card>
+
+                    <!-- Example 1 -->
+                    <cards:Card>
+                        <StackLayout Padding="15"
+                                     Spacing="15">
+                            <texts:Headline Text="{x:Static resources:Texts.Example1Headline}"
+                                            HorizontalTextAlignment="Center" />
+                            <texts:Paragraph Text="{x:Static resources:Texts.Example1Description}" />
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
@@ -49,12 +65,72 @@
                                                          Command="{Binding E1C3Command}"
                                                          Text="{Binding E1C3Text}" />
                             </Grid>
+                            <texts:TestLabel Text="{Binding E1NotificationText}"
+                                             HorizontalTextAlignment="Center"
+                                             VerticalTextAlignment="Center" />
                         </StackLayout>
                     </cards:Card>
 
+                    <!-- Example 2 -->
+                    <cards:Card>
+                        <StackLayout Padding="15"
+                                     Spacing="15">
+                            <texts:Headline Text="{x:Static resources:Texts.Example2Headline}" />
+                            <texts:Paragraph Text="{x:Static resources:Texts.Example2Description}" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Frame Grid.Column="0"
+                                       Grid.ColumnSpan="2"
+                                       BackgroundColor="Purple"
+                                       CornerRadius="25" />
+                                <buttons:IndicatorButton Grid.Column="0"
+                                                         Command="{Binding E2C0Command}"
+                                                         Text="Load"
+                                                         Margin="5" />
+                                <buttons:IndicatorButton Grid.Column="1"
+                                                         Command="{Binding E2C1Command}"
+                                                         Text="Save"
+                                                         Margin="5" />
+                                <Frame Grid.Column="0"
+                                       Grid.Row="1"
+                                       Grid.ColumnSpan="2"
+                                       BackgroundColor="Orange"
+                                       CornerRadius="25" />
+                                <buttons:IndicatorButton Grid.Column="0"
+                                                         Grid.Row="1"
+                                                         Grid.ColumnSpan="2"
+                                                         Command="{Binding E2C2Command}"
+                                                         Text="Search"
+                                                         Margin="5" />
+                            </Grid>
+                            <texts:TestLabel Text="{Binding E2NotificationText}"
+                                             HorizontalTextAlignment="Center"
+                                             VerticalTextAlignment="Center" />
+                        </StackLayout>
+                    </cards:Card>
+
+                    <!-- More Info -->
+                    <cards:Card>
+                        <StackLayout Padding="15"
+                                     Spacing="15">
+                            <texts:Headline Text="{x:Static resources:Texts.MoreInfoHeadline}"
+                                            HorizontalTextAlignment="Center" />
+                            <texts:Paragraph Text="{x:Static resources:Texts.MoreInfoDescription}" />
+
+                            <buttons:TransparentButton Text="{x:Static resources:Texts.OpenRepositoryText}"
+                                                       Command="{Binding OpenRepositoryCommand}" />
+                        </StackLayout>
+                    </cards:Card>
 
                 </StackLayout>
             </cards:BackgroundCard>
-        </ScrollView>
+        </layouts:ScrollContent>
     </ContentPage.Content>
 </pages:AbstractContentPage>

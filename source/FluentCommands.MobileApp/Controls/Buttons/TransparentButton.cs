@@ -5,14 +5,13 @@ namespace FluentCommands.MobileApp.Controls.Buttons
     /// <summary>
     /// Test button.
     /// </summary>
-    public class TestButton : Button
+    public class TransparentButton : Button
     {
         /// <summary>
         /// Constructor.
         /// </summary>
-        public TestButton()
+        public TransparentButton()
         {
-            CornerRadius = 25;
             BackgroundColor = Color.Transparent;
         }
     }

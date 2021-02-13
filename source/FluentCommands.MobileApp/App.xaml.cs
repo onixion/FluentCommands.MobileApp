@@ -9,7 +9,7 @@ namespace FluentCommands.MobileApp
         {
             InitializeComponent();
 
-            MainPage = new AboutPage();
+            MainPage = new NavigationPage(new AboutPage());
         }
 
         protected override void OnStart()

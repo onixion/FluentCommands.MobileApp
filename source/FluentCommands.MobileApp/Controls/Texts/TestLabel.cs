@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
-namespace FluentCommands.MobileApp
+namespace FluentCommands.MobileApp.Controls.Texts
 {
     /// <summary>
     /// Test label.

@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,6 +13,8 @@ namespace FluentCommands.MobileApp.Controls.Buttons
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IndicatorButton : ContentView
     {
+        #region CommandProperty
+
         public readonly static BindableProperty CommandProperty = BindableProperty.Create(
             nameof(Command),
             typeof(ICommand),
@@ -39,17 +42,21 @@ namespace FluentCommands.MobileApp.Controls.Buttons
 
         private void OnCanExecutedChanged(object sender, EventArgs e)
         {
-            return;
             var canExecute = Command?.CanExecute(null) ?? false;
 
             if (canExecute)
             {
-                Frame.BackgroundColor = Color.Green;
+                Frame.BackgroundColor = Color.LightGreen;
+                Frame.Opacity = 1.0;
             }
             else
             {
                 Frame.BackgroundColor = Color.Red;
+                Frame.Opacity = 0.5;
             }
+
+            Button.Text = "";
+            Button.Text = Text;
         }
 
         public ICommand Command
@@ -57,6 +64,10 @@ namespace FluentCommands.MobileApp.Controls.Buttons
             get => (ICommand)GetValue(CommandProperty);
             set => SetValue(CommandProperty, value);
         }
+
+        #endregion
+
+        #region TextProperty
 
         public readonly static BindableProperty TextProperty = BindableProperty.Create(
            nameof(Text),
@@ -76,12 +87,25 @@ namespace FluentCommands.MobileApp.Controls.Buttons
             set => SetValue(TextProperty, value);
         }
 
+        #endregion
+
         /// <summary>
         /// Constructor.
         /// </summary>
         public IndicatorButton()
         {
             InitializeComponent();
+        }
+
+        protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            base.OnPropertyChanged(propertyName);
+
+            if (Button != null)
+            {
+                Button.Text = "";
+                Button.Text = Text;
+            }
         }
     }
 }

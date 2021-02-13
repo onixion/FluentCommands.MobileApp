@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace FluentCommands.MobileApp.Pages.About
 {
@@ -15,6 +16,7 @@ namespace FluentCommands.MobileApp.Pages.About
         {
             InitializeComponent();
             BindingContext = new AboutViewModel();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

@@ -6,11 +6,11 @@
 
         <!-- Halaney Demo -->
         <OnPlatform x:TypeArguments="x:String"
-                    x:Key="Halaney-Demo">
+                    x:Key="Lobster">
             <On Platform="iOS"
-                Value="Halaney-Demo.otf" />
+                Value="Lobster.otf" />
             <On Platform="Android"
-                Value="Halaney-Demo.otf#Halaney-Demo" />
+                Value="Lobster.otf#Lobster" />
         </OnPlatform>
 
         <!-- Ubuntu Regular -->

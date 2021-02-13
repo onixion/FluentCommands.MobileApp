@@ -63,12 +63,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\Controls\Texts\ParagraphRenderer.cs" />
+    <Compile Include="Renderers\Layouts\ScrollContentRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Halaney-Demo.otf" />
     <AndroidAsset Include="Assets\Ubuntu-Bold.ttf" />
     <AndroidAsset Include="Assets\Ubuntu-BoldItalic.ttf" />
     <AndroidAsset Include="Assets\Ubuntu-Italic.ttf" />
@@ -81,8 +82,8 @@
     <AndroidAsset Include="Assets\UbuntuMono-Italic.ttf" />
     <AndroidAsset Include="Assets\UbuntuMono-Regular.ttf" />
     <AndroidAsset Include="Assets\Ubuntu-Regular.ttf" />
+    <AndroidAsset Include="Assets\Lobster.otf" />
     <None Include="Resources\AboutResources.txt" />
-    <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
