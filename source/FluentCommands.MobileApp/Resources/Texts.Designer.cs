@@ -61,11 +61,29 @@ namespace FluentCommands.MobileApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The following 4 buttons are tied together through a fluent command manager. Each button is registered to an own execution group with different locking behaviors. These are the configurations from left to right: LockAll, LockOthers, LockThis and LockNothing. Press on each button to see how they interact with the other buttons. A green button indicates that the command of the button can execute. A red button indicates that the command can currently not execute..
+        ///   Looks up a localized string similar to The following 4 buttons are tied together through a fluent command manager. Each button has a command assignt to it. Each command is registered to an own execution group with a different locking behavior..
         /// </summary>
-        internal static string Example1Description {
+        internal static string Example1DescriptionParagraph1 {
             get {
-                return ResourceManager.GetString("Example1Description", resourceCulture);
+                return ResourceManager.GetString("Example1DescriptionParagraph1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These are the configurations from left to right:.
+        /// </summary>
+        internal static string Example1DescriptionParagraph2 {
+            get {
+                return ResourceManager.GetString("Example1DescriptionParagraph2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - &lt;u&gt;&lt;b&gt;LockAll&lt;/b&gt;&lt;/u&gt;: Lock all groups when a command from this group is executed&lt;br&gt;&lt;br&gt;- &lt;u&gt;&lt;b&gt;LockOthers&lt;/b&gt;&lt;/u&gt;: Lock all other groups when a command from this group is executed.&lt;br&gt;&lt;br&gt;- &lt;u&gt;&lt;b&gt;LockThis&lt;/b&gt;&lt;/u&gt;: Lock this group when a command from this group is executed.&lt;br&gt;&lt;br&gt;- &lt;u&gt;&lt;b&gt;LockNothing&lt;/b&gt;&lt;/u&gt;: Lock no group when a command from this group is executed..
+        /// </summary>
+        internal static string Example1DescriptionParagraph3 {
+            get {
+                return ResourceManager.GetString("Example1DescriptionParagraph3", resourceCulture);
             }
         }
         
@@ -79,7 +97,7 @@ namespace FluentCommands.MobileApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Here is a usecase..
+        ///   Looks up a localized string similar to The following example has to execution groups defined..
         /// </summary>
         internal static string Example2Description {
             get {

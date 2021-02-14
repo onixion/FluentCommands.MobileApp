@@ -3,11 +3,11 @@
                            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                            xmlns:buttons="clr-namespace:FluentCommands.MobileApp.Controls.Buttons"
                            xmlns:cards="clr-namespace:FluentCommands.MobileApp.Controls.Cards"
-                           xmlns:separators="clr-namespace:FluentCommands.MobileApp.Controls.Separators"
                            xmlns:texts="clr-namespace:FluentCommands.MobileApp.Controls.Texts"
                            xmlns:layouts="clr-namespace:FluentCommands.MobileApp.Layouts"
                            xmlns:pages="clr-namespace:FluentCommands.MobileApp.Pages"
                            xmlns:resources="clr-namespace:FluentCommands.MobileApp.Resources"
+                           xmlns:separators="clr-namespace:FluentCommands.MobileApp.Controls.Separators"
                            x:Class="FluentCommands.MobileApp.Pages.About.AboutPage">
     <ContentPage.Content>
         <layouts:ScrollContent>
@@ -42,32 +42,60 @@
                     <cards:Card>
                         <StackLayout Padding="15"
                                      Spacing="15">
+                            
                             <texts:Headline Text="{x:Static resources:Texts.Example1Headline}"
                                             HorizontalTextAlignment="Center" />
-                            <texts:Paragraph Text="{x:Static resources:Texts.Example1Description}" />
-                            <Grid>
+                            
+                            <texts:Paragraph Text="{x:Static resources:Texts.Example1DescriptionParagraph1}" />
+
+                            <texts:Paragraph Text="{x:Static resources:Texts.Example1DescriptionParagraph2}" />
+
+                            <separators:LineSeparator />
+
+                            <texts:Paragraph Text="{x:Static resources:Texts.Example1DescriptionParagraph3}"
+                                             TextType="Html"
+                                             IsTextJustified="False" />
+
+                            <Grid Margin="0, 0, 0, 15">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
+                                <Frame Grid.Column="0"
+                                       BackgroundColor="#F2BAC9"
+                                       CornerRadius="25" />
                                 <buttons:IndicatorButton Grid.Column="0"
                                                          Command="{Binding E1C0Command}"
-                                                         Text="{Binding E1C0Text}" />
+                                                         Text="{Binding E1C0Text}"
+                                                         Margin="5" />
+                                <Frame Grid.Column="1"
+                                       BackgroundColor="#78FFD6"
+                                       CornerRadius="25" />
                                 <buttons:IndicatorButton Grid.Column="1"
                                                          Command="{Binding E1C1Command}"
-                                                         Text="{Binding E1C1Text}" />
+                                                         Text="{Binding E1C1Text}"
+                                                         Margin="5" />
+                                <Frame Grid.Column="2"
+                                       BackgroundColor="#FF8E72"
+                                       CornerRadius="25" />
                                 <buttons:IndicatorButton Grid.Column="2"
                                                          Command="{Binding E1C2Command}"
-                                                         Text="{Binding E1C2Text}" />
+                                                         Text="{Binding E1C2Text}"
+                                                         Margin="5" />
+                                <Frame Grid.Column="3"
+                                       BackgroundColor="#C9E3AC"
+                                       CornerRadius="25" />
                                 <buttons:IndicatorButton Grid.Column="3"
                                                          Command="{Binding E1C3Command}"
-                                                         Text="{Binding E1C3Text}" />
+                                                         Text="{Binding E1C3Text}"
+                                                         Margin="5" />
                             </Grid>
+                            
                             <texts:TestLabel Text="{Binding E1NotificationText}"
-                                             HorizontalTextAlignment="Center"
-                                             VerticalTextAlignment="Center" />
+                                             HorizontalTextAlignment="Center" />
+                            
                         </StackLayout>
                     </cards:Card>
 
@@ -75,9 +103,13 @@
                     <cards:Card>
                         <StackLayout Padding="15"
                                      Spacing="15">
-                            <texts:Headline Text="{x:Static resources:Texts.Example2Headline}" />
+                            
+                            <texts:Headline Text="{x:Static resources:Texts.Example2Headline}"
+                                            HorizontalTextAlignment="Center" />
+                            
                             <texts:Paragraph Text="{x:Static resources:Texts.Example2Description}" />
-                            <Grid>
+                            
+                            <Grid Margin="0, 0, 0, 15">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
@@ -88,7 +120,7 @@
                                 </Grid.RowDefinitions>
                                 <Frame Grid.Column="0"
                                        Grid.ColumnSpan="2"
-                                       BackgroundColor="Purple"
+                                       BackgroundColor="#F2BAC9"
                                        CornerRadius="25" />
                                 <buttons:IndicatorButton Grid.Column="0"
                                                          Command="{Binding E2C0Command}"
@@ -101,7 +133,7 @@
                                 <Frame Grid.Column="0"
                                        Grid.Row="1"
                                        Grid.ColumnSpan="2"
-                                       BackgroundColor="Orange"
+                                       BackgroundColor="#78FFD6"
                                        CornerRadius="25" />
                                 <buttons:IndicatorButton Grid.Column="0"
                                                          Grid.Row="1"
@@ -110,9 +142,10 @@
                                                          Text="Search"
                                                          Margin="5" />
                             </Grid>
+                            
                             <texts:TestLabel Text="{Binding E2NotificationText}"
-                                             HorizontalTextAlignment="Center"
-                                             VerticalTextAlignment="Center" />
+                                             HorizontalTextAlignment="Center" />
+                            
                         </StackLayout>
                     </cards:Card>
 
@@ -123,9 +156,8 @@
                             <texts:Headline Text="{x:Static resources:Texts.MoreInfoHeadline}"
                                             HorizontalTextAlignment="Center" />
                             <texts:Paragraph Text="{x:Static resources:Texts.MoreInfoDescription}" />
-
-                            <buttons:TransparentButton Text="{x:Static resources:Texts.OpenRepositoryText}"
-                                                       Command="{Binding OpenRepositoryCommand}" />
+                            <Button Text="{x:Static resources:Texts.OpenRepositoryText}"
+                                    Command="{Binding OpenRepositoryCommand}" />
                         </StackLayout>
                     </cards:Card>
 

@@ -46,7 +46,7 @@ namespace FluentCommands.MobileApp.Controls.Buttons
 
             if (canExecute)
             {
-                Frame.BackgroundColor = Color.LightGreen;
+                Frame.BackgroundColor = Color.Green;
                 Frame.Opacity = 1.0;
             }
             else

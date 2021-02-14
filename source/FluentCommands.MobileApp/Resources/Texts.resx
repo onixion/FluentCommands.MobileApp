@@ -117,14 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Example1Description" xml:space="preserve">
-    <value>The following 4 buttons are tied together through a fluent command manager. Each button is registered to an own execution group with different locking behaviors. These are the configurations from left to right: LockAll, LockOthers, LockThis and LockNothing. Press on each button to see how they interact with the other buttons. A green button indicates that the command of the button can execute. A red button indicates that the command can currently not execute.</value>
+  <data name="Example1DescriptionParagraph1" xml:space="preserve">
+    <value>The following 4 buttons are tied together through a fluent command manager. Each button has a command assignt to it. Each command is registered to an own execution group with a different locking behavior.</value>
+  </data>
+  <data name="Example1DescriptionParagraph2" xml:space="preserve">
+    <value>These are the configurations from left to right:</value>
+  </data>
+  <data name="Example1DescriptionParagraph3" xml:space="preserve">
+    <value>- &lt;u&gt;&lt;b&gt;LockAll&lt;/b&gt;&lt;/u&gt;: Lock all groups when a command from this group is executed&lt;br&gt;&lt;br&gt;- &lt;u&gt;&lt;b&gt;LockOthers&lt;/b&gt;&lt;/u&gt;: Lock all other groups when a command from this group is executed.&lt;br&gt;&lt;br&gt;- &lt;u&gt;&lt;b&gt;LockThis&lt;/b&gt;&lt;/u&gt;: Lock this group when a command from this group is executed.&lt;br&gt;&lt;br&gt;- &lt;u&gt;&lt;b&gt;LockNothing&lt;/b&gt;&lt;/u&gt;: Lock no group when a command from this group is executed.</value>
   </data>
   <data name="Example1Headline" xml:space="preserve">
     <value>Example 1</value>
   </data>
   <data name="Example2Description" xml:space="preserve">
-    <value>Here is a usecase.</value>
+    <value>The following example has to execution groups defined.</value>
   </data>
   <data name="Example2Headline" xml:space="preserve">
     <value>Example 2</value>

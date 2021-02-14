@@ -13,7 +13,7 @@ namespace FluentCommands.MobileApp.Controls.Texts
         public Headline()
         {
             FontFamily = (OnPlatform<string>)Application.Current.Resources["Ubuntu-Regular"];
-            FontSize = 18;
+            FontSize = 16;
             TextColor = Color.Black;
         }
     }

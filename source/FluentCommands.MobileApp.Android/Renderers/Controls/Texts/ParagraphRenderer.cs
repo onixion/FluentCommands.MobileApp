@@ -29,11 +29,14 @@ namespace FluentCommands.MobileApp.Droid.Renderers.Controls.Texts
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (Element is Paragraph)
+            if (Element is Paragraph paragraph)
             {
-                if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+                if (paragraph.IsTextJustified)
                 {
-                    Control.JustificationMode = Android.Text.JustificationMode.InterWord;
+                    if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+                    {
+                        Control.JustificationMode = Android.Text.JustificationMode.InterWord;
+                    }
                 }
             }
         }

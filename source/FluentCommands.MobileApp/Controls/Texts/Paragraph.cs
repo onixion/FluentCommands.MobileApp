@@ -7,6 +7,22 @@ namespace FluentCommands.MobileApp.Controls.Texts
     /// </summary>
     public class Paragraph : Label
     {
+        #region IsTextJustifiedProperty
+
+        public readonly static BindableProperty IsTextJustifiedProperty = BindableProperty.Create(
+           nameof(IsTextJustified),
+           typeof(bool),
+           typeof(Paragraph),
+           true);
+
+        public bool IsTextJustified
+        {
+            get => (bool)GetValue(IsTextJustifiedProperty);
+            set => SetValue(IsTextJustifiedProperty, value);
+        }
+
+        #endregion
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -15,6 +31,7 @@ namespace FluentCommands.MobileApp.Controls.Texts
             FontFamily = (OnPlatform<string>)Application.Current.Resources["Ubuntu-Light"];
             FontSize = 14;
             TextColor = Color.Black;
+            CharacterSpacing = 0.25;
         }
     }
 }

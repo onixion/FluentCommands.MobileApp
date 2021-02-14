@@ -74,28 +74,28 @@ namespace FluentCommands.MobileApp.Pages.About
             get => e1c0Text;
             set => SetProperty(ref e1c0Text, value);
         }
-        string e1c0Text;
+        string e1c0Text = "1";
 
         public string E1C1Text
         {
             get => e1c1Text;
             set => SetProperty(ref e1c1Text, value);
         }
-        string e1c1Text;
+        string e1c1Text = "1";
 
         public string E1C2Text
         {
             get => e1c2Text;
             set => SetProperty(ref e1c2Text, value);
         }
-        string e1c2Text;
+        string e1c2Text = "1";
 
         public string E1C3Text
         {
             get => e1c3Text;
             set => SetProperty(ref e1c3Text, value);
         }
-        string e1c3Text;
+        string e1c3Text = "1";
 
         public string E1NotificationText
         {
